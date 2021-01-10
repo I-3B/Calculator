@@ -1,0 +1,105 @@
+body{
+    background-color: rgba(30, 1, 58, 0.856);
+}
+#calculator{
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+    background-color:black;
+    border: 7px solid rgb(36, 0, 95);
+    border-radius: 5%;
+    overflow: hidden;
+    -user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+                             
+}
+#display{
+    background-color: rgb(39, 39, 39);
+    grid-area: 1/1/2/3;
+    width:100%;
+    height: 6.3em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-color: rgb(206, 206, 206);
+}
+
+#display-text{
+    line-height:5em;
+    text-align: center;
+    width :75%;
+    height: 100%;
+    -webkit-touch-callout: text; 
+    -webkit-user-select: text; 
+    -khtml-user-select: text; 
+    -moz-user-select: text; 
+    -ms-user-select: text; 
+    user-select:text; 
+    
+}
+
+#delete{
+    width :25%;
+    height: 100%;
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+}
+#delete img{
+    margin: 25%;
+    width: 45%;
+    height: 45%;
+}
+
+#delete img:hover{
+    cursor: pointer;
+}
+#numbers-pad{
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: rgb(48, 45, 51);
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+}
+#operations-pad{
+    color:white;
+    text-align: center;
+    display: grid;
+    grid-template-rows : repeat(5,1fr);
+    background-color:rgb(31, 31, 31);
+}.number{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:7.8em;
+    height: 6.25em;
+    font-size:16px;
+}
+.operation{
+    cursor: pointer;
+    font-size:x-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.operation:hover {
+    background-color: rgb(63, 23, 82);
+    border-radius:5%;
+}
+.number:hover{
+    background-color: rgb(63, 23, 82);
+    border-radius:5%;
+}
