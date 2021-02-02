@@ -2,11 +2,11 @@ var input = '';
 const display=document.querySelector('#display-text');
 const number=document.querySelectorAll('.number');
 const operation=document.querySelectorAll('.operation');
-const deleteButton=document.querySelector('#delete');
-const clearAll=document.querySelector('#AC');
+const allClear=document.querySelector('#allClear');
+const clear=document.querySelector('#clear')
 const point=document.querySelector('#point');
 const equal=document.querySelector('#equal');
-
+const posiNega=document.querySelector('#posi-nega')
 
 function inputLength(){
     return input.length<30;
@@ -24,9 +24,10 @@ function opToResult(arr,index,result){
 
 function bigNumberCheck(){
     let arr=input.split(' ');
-    let max=arr.reduce((a,b)=>{
-        return a<b.length?b.length:a;
-    },0)
+    let max=arr.reduce((max,num)=>{
+        num=parseFloat(num);
+        return max<num?num:max;
+    },parseFloat(arr[0]))
     console.log(max);
     return max>=15;
 }
@@ -81,17 +82,6 @@ function subtract(){
     }
 }
 
-deleteButton.addEventListener('click',()=>{
-    if(input[input.length-1] == ' '){
-        input=input.substring(0,input.length-3);
-        display.textContent=input;
-    }
-    else{
-        input=input.substring(0,input.length-1);
-        display.textContent=input;
-    }
-
-})
 
 number.forEach(i=>
     i.addEventListener('click',()=>{
@@ -111,23 +101,38 @@ operation.forEach(i=>
     })
 )
 
-clearAll.addEventListener('click',()=>{
+allClear.addEventListener('click',()=>{
     input='';
     display.textContent='';
     }
 )
+clear.addEventListener('click',()=>{
+    if(input[input.length-1]==' ')
+        input=input.substring(0,input.length-3);
+    else
+        input=input.substring(0,input.length-1);
+        display.textContent=input
+})
+
+posiNega.addEventListener('click',()=>{
+    let arr=input.split(' ');
+    let last=arr.length-1;
+    if(parseFloat(arr[last])>0)
+        arr[last]='-'+arr[last];
+    else if(parseFloat(arr[last])<0)
+        arr[last]=arr[last].substring(1);
+    input=arr.join(' ');
+    display.textContent=input;
+})
 
 equal.addEventListener('click',()=>{
-    if(!bigNumberCheck()){
+    if(input[input.length-1]!=' '){
     divide();
     multiply();
     subtract();
     add();
-    
     display.textContent=input;
-    }
-    else
-    display.textContent='Cannot calculate big numbers(for now at least)'
+}
 }
 )
 

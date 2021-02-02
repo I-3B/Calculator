@@ -12,9 +12,11 @@
         <div id="calculator">
             <div id="display">
                 <div id="display-text-div"><div id="display-text"></div></div>
-                <div id="delete"><img src="resource/backspace.png" alt="backspace"></div>
             </div>
             <div id="numbers-pad">
+                <div class="number-cell" id="posi-nega"><p>+/-</p></div>
+                <div class="number-cell" id="clear"><p>C</p></div>
+                <div class="number-cell" id="allClear"><p>AC</p></div>
                 <div class="number-cell number"><p>7</p></div>
                 <div class="number-cell number"><p>8</p></div>
                 <div class="number-cell number"><p>9</p></div>
@@ -24,16 +26,15 @@
                 <div class="number-cell number"><p>1</p></div>
                 <div class="number-cell number"><p>2</p></div>
                 <div class="number-cell number"><p>3</p></div>
-                <div class="number-cell number"><p>0</p></div>
+                <div class="number-cell number" id="zero"><p>0</p></div>
                 <div class="number-cell" id="point"><p>.</p></div>
-                <div class="number-cell" id="equal"><p>=</p></div>
             </div>
             <div id="operations-pad">
-                <div class="operation-cell" id="AC"><p>AC</p></div>
                 <div class="operation-cell operation"><p>×</p></div>
                 <div class="operation-cell operation"><p>÷</p></div>
                 <div class="operation-cell operation"><p>-</p></div>
                 <div class="operation-cell operation"><p>+</p></div>
+                <div class="operation-cell" id="equal"><p>=</p></div>
             </div>
         </div>
         <script src="script.js" async defer></script>
