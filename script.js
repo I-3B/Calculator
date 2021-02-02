@@ -71,12 +71,13 @@ function subtract(){
     let arr
     let index;
     let result;
-    while(input.includes('-')){
+    while(input.includes(' - ')){
         arr=input.split(' ');
-        if(arr.length==1)break;
         index=arr.indexOf('-');
+        if(arr[index].length==1){
         result=parseFloat(arr[index-1])-parseFloat(arr[index+1]);
         opToResult(arr,index,result);
+        }
     }
 }
 
