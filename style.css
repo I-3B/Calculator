@@ -40,6 +40,7 @@ body{
 }
 
 #display-text-div{
+    overflow: scroll;
     width:100%;
     word-wrap: break-word;
     font-size: 1.9em;
@@ -116,19 +117,35 @@ body{
     grid-area: 5/1/6/3;
 }
 @media only screen and (max-width: 600px){
+    #calculator{
+        margin-top:1em;        
+        width:  350px;
+        height: 500px;
+    }
+    #numbers-pad{
+        width: 17em;
+    }
+    .number-cell{
+        width:5.3em;
+        height: 5.3em;
+    }
+    .operation-cell{
+        width: 3.5em;
+        height: 3.5em;
+    }
+
     .number-cell:hover{
-        transition: .5s;
-        background-color: rgba(255, 145, 0, 0.336);
+        background-color:initial;
     }
     .number-cell:active{
-        background-color:initial;
+        background-color: rgba(255, 145, 0, 0.397);
     }
 
     .operation-cell:hover{
-        transition: .5s;
-        background-color: rgb(15, 15, 15);
+        background-color: initial;        
     }
     .operation-cell:active{
-        background-color: initial;
+        background-color: rgb(15, 15, 15);
+
     }
 }
