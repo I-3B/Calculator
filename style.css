@@ -1,4 +1,6 @@
 body{
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     background-color: rgba(7, 7, 7, 0.925);
 }
 #calculator{
@@ -110,7 +112,23 @@ body{
 }
 #zero{
     margin: auto;
-    border-radius: 50%;
     width:11em;
     grid-area: 5/1/6/3;
+}
+@media only screen and (max-width: 600px){
+    .number-cell:hover{
+        transition: .5s;
+        background-color: rgba(255, 145, 0, 0.336);
+    }
+    .number-cell:active{
+        background-color:initial;
+    }
+
+    .operation-cell:hover{
+        transition: .5s;
+        background-color: rgb(15, 15, 15);
+    }
+    .operation-cell:active{
+        background-color: initial;
+    }
 }
