@@ -9,7 +9,7 @@ const equal=document.querySelector('#equal');
 const posiNega=document.querySelector('#posi-nega')
 
 function inputLength(){
-    return input.length<30;
+    return input.length<80;
 }
 
 function opToResult(arr,index,result){
