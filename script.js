@@ -7,16 +7,11 @@ const clear=document.querySelector('#clear')
 const point=document.querySelector('#point');
 const equal=document.querySelector('#equal');
 const posiNega=document.querySelector('#posi-nega')
-
+var equalPressed=false;
 
 function opToResult(arr,index,result){
-        console.log('start');
-        console.log(input);
-        console.log(arr);
         arr.splice(index - 1, 3, result);
-        console.log(arr);
         input=arr.join(' ');
-        console.log('end');
 }
 
 
@@ -84,6 +79,10 @@ function round(){
 
 number.forEach(i=>
     i.addEventListener('click',()=>{
+        if(equalPressed){
+            input=''
+            equalPressed=false;
+        }
         input+=i.textContent;
         display.textContent=input;
         
@@ -92,6 +91,9 @@ number.forEach(i=>
 
 operation.forEach(i=>
     i.addEventListener('click',()=>{
+        if(equalPressed){
+            equalPressed=false;
+        }
         if(input!='' && input[input.length-1]!=' '){
         input+=` ${i.textContent} `;
         display.textContent=input;
@@ -131,6 +133,7 @@ equal.addEventListener('click',()=>{
     add();
     round();
     display.textContent=input;
+    equalPressed=true;
     if(input=='Cannot divide by zero'){
         input='';
     }
