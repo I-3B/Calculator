@@ -115,6 +115,7 @@ body{
     background-color: rgb(10, 10, 10);
 }
 #zero{
+    border-radius: 50px;
     margin: auto;
     width:11em;
     grid-area: 5/1/6/3;
