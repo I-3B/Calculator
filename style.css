@@ -3,6 +3,9 @@ body{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     background-color: rgba(7, 7, 7, 0.925);
 }
+::-webkit-scrollbar {
+    width: 0px;
+}
 #calculator{
     font-weight: bold;
     font-family:Arial, Helvetica, sans-serif;
@@ -40,7 +43,7 @@ body{
 }
 
 #display-text-div{
-    overflow: scroll;
+    overflow-y: scroll;
     width:100%;
     word-wrap: break-word;
     font-size: 1.9em;
