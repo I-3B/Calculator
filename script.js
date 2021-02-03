@@ -39,8 +39,13 @@ function divide(){
     while(input.includes('÷')){
         arr=input.split(' ');
         index=arr.indexOf('÷');
+        if(arr[index+1]=='0'){
+            input='Cannot divide by zero';
+        }
+        else{
         result=parseFloat(arr[index-1])/parseFloat(arr[index+1]);
         opToResult(arr,index,result);
+        }
     }
 }
 
@@ -85,7 +90,7 @@ function subtract(){
 }
 
 function round(){
-   if(parseFloat(input)>0.001)
+   if(parseFloat(input)>0.0001)
     input=(Math.round(parseFloat(input) * 10000) / 10000).toString(10);
 }
 
@@ -139,6 +144,9 @@ equal.addEventListener('click',()=>{
     add();
     round();
     display.textContent=input;
+    if(input=='Cannot divide by zero'){
+        input='';
+    }
 }
 }
 )
