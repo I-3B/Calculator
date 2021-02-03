@@ -60,11 +60,13 @@ function add(){
     let arr
     let index;
     let result;
-    while(input.includes('+')){
+    while(input.includes(' + ')){
         arr=input.split(' ');
-        index=arr.indexOf('+');
+        index=arr.indexOf('+'); 
+        if(arr[index].length==1){
         result=parseFloat(arr[index-1])+parseFloat(arr[index+1]);
         opToResult(arr,index,result);
+        }
     }
 }
 
@@ -82,6 +84,10 @@ function subtract(){
     }
 }
 
+function round(){
+   if(parseFloat(input)>0.001)
+    input=(Math.round(parseFloat(input) * 10000) / 10000).toString(10);
+}
 
 number.forEach(i=>
     i.addEventListener('click',()=>{
@@ -131,6 +137,7 @@ equal.addEventListener('click',()=>{
     multiply();
     subtract();
     add();
+    round();
     display.textContent=input;
 }
 }
