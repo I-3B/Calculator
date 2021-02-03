@@ -137,26 +137,30 @@ body{
         height: 3.5em;
     }
 
+    
     .number-cell:hover{
-        animation-name: hover-number-mobile;
-        animation-duration:0.7s;
-        animation-fill-mode: forwards;  
+        background-color: initial;
     }
     .operation-cell:hover{
+        background-color: initial;     
+    }
+    .number-cell:active{
+        animation-name: hover-number-mobile;
+        animation-duration:0.4s;
+        animation-fill-mode: forwards;  
+    }
+    .operation-cell:active{
         animation-name: hover-operation-mobile;
-        animation-duration:0.7s;
+        animation-duration:0.4s;
         animation-fill-mode: forwards;      
     }
 }
 @keyframes hover-number-mobile{
     0%{
-        background-color: initial;
-    }
-    2%{
-        background-color:rgba(255, 145, 0, 0.288);
+        background-color:rgba(255, 145, 0, 0.226) ;
     }
     50%{
-        background-color: rgba(255, 145, 0, 0.541);
+        background-color: rgba(255, 145, 0, 0.411);
     }
     100%{
         background-color: initial;
@@ -164,9 +168,6 @@ body{
 }
 @keyframes hover-operation-mobile{
     0%{
-        background-color: initial;
-    }
-    2%{
         background-color:rgba(7, 7, 7, 0.288);
     }
     50%{
