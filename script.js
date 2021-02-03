@@ -8,9 +8,6 @@ const point=document.querySelector('#point');
 const equal=document.querySelector('#equal');
 const posiNega=document.querySelector('#posi-nega')
 
-function inputLength(){
-    return input.length<80;
-}
 
 function opToResult(arr,index,result){
         console.log('start');
@@ -22,15 +19,6 @@ function opToResult(arr,index,result){
         console.log('end');
 }
 
-function bigNumberCheck(){
-    let arr=input.split(' ');
-    let max=arr.reduce((max,num)=>{
-        num=parseFloat(num);
-        return max<num?num:max;
-    },parseFloat(arr[0]))
-    console.log(max);
-    return max>=15;
-}
 
 function divide(){
     let arr
@@ -96,16 +84,15 @@ function round(){
 
 number.forEach(i=>
     i.addEventListener('click',()=>{
-        if(inputLength()){
         input+=i.textContent;
         display.textContent=input;
-        }
+        
     })
 )
 
 operation.forEach(i=>
     i.addEventListener('click',()=>{
-        if(inputLength()&& input!='' && input[input.length-1]!=' '){
+        if(input!='' && input[input.length-1]!=' '){
         input+=` ${i.textContent} `;
         display.textContent=input;
         }
