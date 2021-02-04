@@ -22,7 +22,7 @@ function divide(){
     while(input.includes('÷')){
         arr=input.split(' ');
         index=arr.indexOf('÷');
-        if(arr[index+1]=='0'){
+        if(parseFloat(arr[index+1])==0){
             input='Cannot divide by zero';
         }
         else{
